@@ -184,3 +184,9 @@ with col2:
 
 st.divider()
 st.caption("Project ya Field 2026")
+st.divider()
+st.subheader("📝 Quiz Ndogo")
+neno_quiz = random.choice(list(financial_terms.keys()))
+jibu = st.text_input(f"Maana ya '{neno_quiz}' ni nini?")
+if st.button("Angalia Jibu"):
+    st.info(financial_terms[neno_quiz]['maana'])
