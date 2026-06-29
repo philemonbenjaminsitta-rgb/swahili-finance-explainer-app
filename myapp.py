@@ -199,11 +199,3 @@ with col2:
     if st.button("Neno Jipya ➡️"):
         del st.session_state.neno_quiz
         st.rerun()
-st.divider()
-st.caption("Project ya Field 2026")
-st.divider()
-st.subheader("📝 Quiz Ndogo")
-neno_quiz = random.choice(list(financial_terms.keys()))
-jibu = st.text_input(f"Maana ya '{neno_quiz}' ni nini?")
-if st.button("Angalia Jibu"):
-    st.info(financial_terms[neno_quiz]['maana'])
