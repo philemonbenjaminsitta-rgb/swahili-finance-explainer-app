@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st,random
 import random
 # 1. DATABASE YAKO NDOGO - Ongeza maneno hapa
 financial_terms = {
