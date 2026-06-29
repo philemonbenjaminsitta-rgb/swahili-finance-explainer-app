@@ -178,10 +178,27 @@ with col1:
             st.warning("Tafadhali andika neno kwanza")
 
 with col2:
-    if st.button("📋 Onyesha Maneno Yote", use_container_width=True):
-        st.write("*Maneno yaliyopo sasa hivi:*")
-        st.write(", ".join(list(financial_terms.keys())))
+    st.subheader("🧠 Quiz Ndogo")
 
+    # 1. Hifadhi neno ili lisibadlike kila ukibonyeza
+    if 'neno_quiz' not in st.session_state:
+        st.session_state.neno_quiz = random.choice(list(financial_terms.keys()))
+
+    neno = st.session_state.neno_quiz
+
+    # 2. Chukua maana na mfano kwa usahihi kwa sababu dictionary yako ni ndani ya ndani
+    maana_sahihi = financial_terms[neno]['maana']
+    mfano_sahihi = financial_terms[neno]['mfano']
+
+    jibu = st.text_input(f"Maana ya '{neno}' ni nini?")
+
+    if st.button("Angalia Jibu"):
+        st.info(f"*Maana:* {maana_sahihi}")
+        st.info(f"*Mfano:* {mfano_sahihi}")
+
+    if st.button("Neno Jipya ➡️"):
+        del st.session_state.neno_quiz
+        st.rerun()
 st.divider()
 st.caption("Project ya Field 2026")
 st.divider()
